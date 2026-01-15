@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAD1 PORTAL V5.3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-area" id="web-logo" onclick="adminKnock()">
+            <span>📟</span> <strong>PAD1 PORTAL</strong>
+        </div>
+        <div class="tabs">
+            <button id="tab-news" class="active" onclick="switchTab('news')">📰 ข่าวสารแอดมิน</button>
+            <button id="tab-public" onclick="switchTab('public')">💬 พูดคุย/ถามตอบ</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="view-news">
+            <div id="admin-editor" class="card hidden">
+                <h3 style="color:var(--green);">📝 ลงข่าวสารใหม่</h3>
+                <input type="text" id="n-title" placeholder="หัวข้อข่าว">
+                <textarea id="n-msg" rows="3" placeholder="เนื้อหาข่าวสาร..."></textarea>
+                <input type="text" id="n-img" placeholder="ลิงก์รูปหน้าปก">
+                <button class="btn-admin" onclick="postNews()">ประกาศข่าวสาร</button>
+                
+                <hr style="border:0.5px solid var(--border); margin:20px 0;">
+                <p style="color:#f85149; font-size:0.8rem;">โซนจัดการระบบ:</p>
+                <button onclick="resetPublicBoard()" style="width:100%; padding:10px; background:none; border:1px solid #f85149; color:#f85149; border-radius:8px; cursor:pointer;">
+                    🗑️ ล้างหน้าคุยกันทั้งหมด (Reset Chat)
+                </button>
+            </div>
+            <div id="news-feed"></div>
+        </section>
+
+        <section id="view-public" class="hidden">
+            <div class="card post-box">
+                <h3>🙋‍♂️ โพสต์ถามไถ่ / ส่งรูป</h3>
+                <input type="text" id="p-name" placeholder="ชื่อ/นามแฝง">
+                <input type="email" id="p-email" placeholder="อีเมล (ถ้ามี)">
+                <input type="text" id="p-title" placeholder="หัวข้อคำถาม">
+                <textarea id="p-msg" rows="3" placeholder="พิมพ์ข้อความที่นี่..."></textarea>
+                <input type="text" id="p-img1" placeholder="ลิงก์รูป 1">
+                <input type="text" id="p-img2" placeholder="ลิงก์รูป 2">
+                <button class="btn-main" onclick="postPublic()">ส่งโพสต์พูดคุย</button>
+            </div>
+            <div id="public-feed"></div>
+        </section>
+    </div>
+
+    <div id="admin-lock" class="modal hidden">
+        <div class="modal-content">
+            <h4>📟 ยืนยันแอดมินพัด</h4>
+            <input type="password" id="admin-pass" placeholder="Password">
+            <button onclick="unlockAdmin()">ตกลง</button>
+            <button onclick="closeModal()" style="background:none; color:gray;">ปิด</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

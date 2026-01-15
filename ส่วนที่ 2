@@ -1,0 +1,25 @@
+:root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --primary: #58a6ff; --green: #238636; --border: #30363d; --pin: #f1c40f; }
+body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding-bottom: 50px; }
+
+nav { background: #161b22; padding: 15px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.logo-area { cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 1.1rem; color: var(--primary); }
+
+.tabs button { background: none; border: none; color: #8b949e; cursor: pointer; font-weight: bold; padding: 10px; }
+.tabs button.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+.container { max-width: 500px; margin: 20px auto; padding: 0 15px; }
+.card { background: var(--card); padding: 20px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; position: relative; }
+.pinned-card { border: 2px solid var(--pin) !important; background: #1c2121; }
+
+input, textarea { width: 100%; padding: 12px; margin: 8px 0; background: #0d1117; border: 1px solid var(--border); color: white; border-radius: 8px; box-sizing: border-box; }
+.btn-main { width: 100%; padding: 14px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-admin { width: 100%; padding: 14px; background: var(--green); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+.hidden { display: none; }
+.post-img { width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border); }
+.admin-btns { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; }
+.del-btn { color: #f85149; background: none; border: 1px solid #f85149; border-radius: 4px; cursor: pointer; font-size: 0.7rem; padding: 2px 5px; }
+.pin-btn { color: var(--pin); background: none; border: 1px solid var(--pin); border-radius: 4px; cursor: pointer; font-size: 0.7rem; padding: 2px 5px; }
+
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { background: var(--card); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid var(--primary); }
